@@ -37,6 +37,7 @@ a:hover, a:focus {
   text-decoration: none;
 }
 body {
+  background-color: $bg-light;
   font-family: $sans-serif;
   font-weight: $light;
   color: $txt-primary;
@@ -107,6 +108,7 @@ section .header {
 /* ==========================================================================
 Animations
 ========================================================================== */
+/*
 .pulse2 {
   animation-name: pulse2;
   animation-duration: 1s;
@@ -158,10 +160,12 @@ Animations
     transform: translate(-50%, 0)
   }
 }
+*/
 
 /* ==========================================================================
 Waypoinsts
 ========================================================================== */
+/*
 .wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9 {
   visibility: hidden
 }
@@ -172,6 +176,7 @@ Waypoinsts
 .bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight, .bounceInDown {
   visibility: visible
 }
+*/
 
 /* ==========================================================================
 Navigation
@@ -375,9 +380,9 @@ header {
 /* ==========================================================================
 Social share buttons
 ========================================================================== */
-.share-bar {
+/*.share-bar {
   margin-top: 20px;
-}
+}*/
 
 /* ==========================================================================
 Intro
@@ -725,6 +730,7 @@ Engagement Pics
 /* ==========================================================================
 Embed video
 ========================================================================== */
+/*
 #video-bg {
   height: 300px;
 }
@@ -745,6 +751,7 @@ Embed video
 #video-content p {
   color: #ffffff;
 }
+*/
 
 /* ==========================================================================
 Google map
