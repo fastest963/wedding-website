@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
@@ -80,7 +81,7 @@
         </div>
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp" class="btn btn-fill btn-large rsvp-btn">RSVP</a></div>
             <div class="col-sm-4 hidden-xs"></div>
         </div>
     </div>
@@ -126,8 +127,8 @@
                     <p><strong>Reception</strong></p>
                     <h5>The Wooly <span class="time">6PM-10:45PM</span></h5>
                     <p>
-                        The reception will take place in the heart of downtown Gainesville, The Wooly. The event will be
-                        catered by one of Gainesville's most beloved restaurants, The Top.
+                        The reception will take place in the heart of downtown Gainesville, The Wooly, and will be
+                        catered by one of it's most beloved restaurants, The Top. Cocktail hour is from 6PM to 7PM.
                     </p>
                 </div>
             </div>
@@ -372,24 +373,59 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>Where do I sign up?</h3>
-                <p>We would greatly appreciate if you could RSVP before September 12th</p>
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                <p>Please RSVP no later than September 12th</p>
+                <form id="rsvp-form" class="rsvp-form" action="" method="POST">
+                    <div class="row" id="rsvp-attending">
+                        <div class="col-md-12 col-sm-12">
                             <div class="form-input-group">
-                                <input name="name" class="" placeholder="Your name" required>
+                                <select name="count">
+                                    <option value="" disabled selected>Select how many people are attending?</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                    </div>
+                    <div class="row hidden" id="rsvp-name-1">
+                        <div class="col-md-12 col-sm-12">
                             <div class="form-input-group">
-                                <input type="number" name="extras" class="" min="0" max="4" placeholder="Partner and/or children" required>
+                                <input name="name1" class="" placeholder="Name" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden" id="rsvp-name-2">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <input name="name2" class="" placeholder="Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden" id="rsvp-name-3">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <input name="name3" class="" placeholder="Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden" id="rsvp-name-4">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <input name="name4" class="" placeholder="Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row hidden" id="rsvp-name-5">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="form-input-group">
+                                <input name="name5" class="" placeholder="Name" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <!--<div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <select id="yes_or_no" name="yes_or_no">
                                     <option value="" disabled selected>Attending?</option>
@@ -397,6 +433,13 @@
                                     <option value="no">No</option>
                                 </select>
                             </div>
+                        </div>-->
+                        <div class="col-md-6 col-sm-6 attending-btn">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-small btn-secondary active">Attending</button>
+                                <button type="button" class="btn btn-small btn-secondary">Can't</button>
+                            </div>
+                            <input class="hidden" name="attending" type="hidden" value="Attending" />
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
@@ -407,7 +450,7 @@
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <button class="btn-fill rsvp-btn">Woot woot!</button>
+                    <button class="btn btn-large rsvp-btn">Woot woot!</button>
                 </form>
             </div>
         </div>

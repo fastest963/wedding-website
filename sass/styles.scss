@@ -24,7 +24,7 @@ Global Styles
   margin: 0;
 }
 a {
-  color: $accent-color;
+  color: $txt-link-dark;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   -webkit-transition-duration: 200ms;
@@ -33,14 +33,14 @@ a {
   transition-property: color, border-color, background-color;
 }
 a:hover, a:focus {
-  color: $accent-color-hover;
+  // color: $accent-color-hover;
   text-decoration: none;
 }
 body {
   background-color: $bg-light;
   font-family: $sans-serif;
   font-weight: $light;
-  color: $txt-primary;
+  color: $txt-dark;
   -webkit-text-size-adjust: 100%;
   //fix for iOS
 }
@@ -61,7 +61,7 @@ section .header {
   padding: $section-padding;
 }
 .section-border {
-  border-bottom: 1px solid $keyline-color;
+  border-bottom: 1px solid $txt-light-hover;
 }
 .tooltip {
   position: absolute;
@@ -105,78 +105,6 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
-/* ==========================================================================
-Animations
-========================================================================== */
-/*
-.pulse2 {
-  animation-name: pulse2;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes pulse2 {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.floating-arrow {
-  animation-name: floating-arrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating-arrow {
-  from {
-    transform: translate(-50%, 0)
-  }
-  65% {
-    transform: translate(-50%, 15px)
-  }
-  to {
-    transform: translate(-50%, 0)
-  }
-}
-.floating-logo {
-  animation-name: floating-logo;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating-logo {
-  from {
-    transform: translate(-50%, 0)
-  }
-  50% {
-    transform: translate(-50%, 10px)
-  }
-  to {
-    transform: translate(-50%, 0)
-  }
-}
-*/
-
-/* ==========================================================================
-Waypoinsts
-========================================================================== */
-/*
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9 {
-  visibility: hidden
-}
-.wp8, .wp9 {
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s
-}
-.bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight, .bounceInDown {
-  visibility: visible
-}
-*/
 
 /* ==========================================================================
 Navigation
@@ -275,6 +203,7 @@ Hero
   h1 {
     color: $txt-light;
     margin-bottom: 40px;
+    font-weight: 600;
   }
   p.intro {
     color: $txt-light;
@@ -295,10 +224,10 @@ Hero
   position: fixed;
   width: 100%;
   z-index: 999;
+  background-color: $bg-dark;
 }
 .fixed {
   position: fixed;
-  background-color: $accent-color;
   z-index: 999;
   width: 100%;
 }
@@ -311,12 +240,16 @@ header {
   transition: padding 300ms ease-in-out;
 
   a {
-    color: $txt-light;
     text-transform: uppercase;
     font-size: $nav-font-size;
+    color: $txt-light;
 
     &.login {
       margin-right: 20px;
+    }
+    &:hover {
+      color: $txt-light-hover;
+      border-color: $txt-light-hover;
     }
   }
   .logo {
@@ -333,12 +266,7 @@ header {
       display: inline;
 
       a {
-        color: $txt-light;
         padding-right: 25px;
-
-        &:hover {
-          color: $txt-light;
-        }
       }
       &:last-child a {
         padding-right: 0px;
@@ -349,15 +277,6 @@ header {
   ul.member-actions {
     li {
       display: inline;
-
-      a {
-        color: $txt-light;
-
-        &:hover {
-          color: $txt-light;
-          border-color: $txt-light;
-        }
-      }
     }
   }
   .header-nav {
@@ -371,7 +290,7 @@ header {
   }
 }
 .down-arrow {
-  color: #fff;
+  color: $txt-light;
   font-size: 30px;
   position: absolute;
   bottom: 30px;
@@ -382,18 +301,6 @@ header {
 /* ==========================================================================
 Intro
 ========================================================================== */
-.intro span.icon {
-  font-size: 40px;
-  color: $accent-color;
-  font-weight: bold;
-}
-.intro-icon {
-  display: inline-block;
-  vertical-align: top;
-  padding: 6px 0 0 0;
-  margin-right: 20px;
-  width: 40px;
-}
 .intro-content {
   display: inline-block;
   width: 80%;
@@ -426,7 +333,7 @@ Intro
     font-size: 13px;
     font-style: italic;
     text-transform: lowercase;
-    color: $txt-primary;
+    color: $txt-dark;
   }
 }
 
@@ -515,13 +422,13 @@ Google map
 #map-content {
   margin-top: 40px;
   padding: 50px 60px;
-  background: #fff;
+  background: $bg-light;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
 #btn-show-content {
   padding: 20px;
-  background: #fff;
+  background: $bg-light;
   cursor: pointer;
   display: inline-block;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
@@ -543,11 +450,24 @@ RSVP form
 ========================================================================== */
 .rsvp {
   .rsvp-form {
+    .btn {
+      padding: 15px 30px;
+      border-radius: 3px;
+      font-size: 13px;
+	    color: $txt-link-dark;
+      border-color: $txt-link-dark;
+      background-color: transparent;
+    }
+    .btn:hover, .btn.active {
+	    color: $txt-light;
+      background-color: $txt-link-dark;
+    }
     .rsvp-btn {
       padding: 15px 0;
-      border-radius: 3px;
       width: 100%;
-      font-size: 13px;
+    }
+    .attending-btn {
+      text-align: left;
     }
     .form-input-group {
       width: 100%;
@@ -556,7 +476,7 @@ RSVP form
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px;
-      border: solid 1px $keyline-color;
+      border: solid 1px $txt-light-hover;
       text-align: left;
       position: relative;
       input {
@@ -567,18 +487,20 @@ RSVP form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+        background-color: $txt-light;
+        color: $txt-dark;
       }
       input::-webkit-input-placeholder {
-        color: $form-placeholder;
+        color: $txt-dark-placeholder;
       }
       input:-moz-placeholder {
-        color: $form-placeholder;
+        color: $txt-dark-placeholder;
       }
       input::-moz-placeholder {
-        color: $form-placeholder;
+        color: $txt-dark-placeholder;
       }
       input:-ms-input-placeholder {
-        color: $form-placeholder;
+        color: $txt-dark-placeholder;
       }
       select {
         padding-left: 20px;
@@ -589,11 +511,16 @@ RSVP form
         border-radius: 6px;
         border: none;
         -webkit-appearance: none;
-        background-color: white;
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==);
+        background-color: $txt-light;
+        //background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==);
         background-position : right center;
         background-repeat: no-repeat;
+        color: $txt-dark-placeholder;
       }
+    }
+    .loading {
+      color: $txt-light;
+      background-color: $txt-link-dark;
     }
   }
 }
@@ -603,7 +530,7 @@ Footer
 ========================================================================== */
 footer {
   .content {
-    border-top: 1px solid $keyline-color;
+    border-top: 1px solid $txt-light-hover;
     padding-top: 30px;
   }
 }

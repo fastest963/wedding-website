@@ -10,11 +10,13 @@
 	border-radius: 40px;
 	display: inline-block;
 	text-transform: uppercase;
+	color: $txt-link-dark;
+	border-color: $txt-link-dark;
 }
 .btn:hover, .btn:focus {
-	color: $white-color;
-	border-color: $accent-color;
-	background-color: $accent-color;
+	color: $txt-light;
+	border-color: $txt-link-dark;
+	background-color: $txt-link-dark;
 }
 .btn-white {
 	font-size: 13px;
@@ -24,25 +26,21 @@
 	border-radius: 40px;
 	display: inline-block;
 	border-color: $txt-light;
+	color: $txt-light;
 }
 .btn-white:hover, .btn-white:focus {
-	color: $accent-color;
-	border-color: $accent-color;
+	color: $txt-light-hover;
+	border-color: $txt-light-hover;
 }
 .btn-fill {
-	color: $white-color;
-	border: solid 2px $accent-color;
-	-moz-border-radius: 40px;
-	-webkit-border-radius: 40px;
-	border-radius: 40px;
-	display: inline-block;
-	text-transform: uppercase;
-	background-color: $accent-color;
+	color: $txt-link-dark;
+	border-color: $bg-medium;
+	background-color: $bg-medium;
 }
-.btn-fill:hover, .btn-fill:focus {
-	color: $white-color;
-	background-color: $accent-color-hover;
-	border-color: $accent-color-hover;
+.btn:hover, .btn:focus {
+	color: $txt-light;
+	border-color: $txt-link-dark;
+	background-color: $txt-link-dark;
 }
 .btn-small {
 	padding: 8px 30px;

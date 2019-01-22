@@ -3,9 +3,7 @@
 
 // Fonts
 
-$sans-serif: 'Open Sans', sans-serif;
-$serif: Merriweather, Georgia, 'Times New Roman', serif;
-$accent-font: 'Nunito', sans-serif;
+$sans-serif: Montserrat, 'Open Sans', sans-serif;
 
 // Weights
 
@@ -41,7 +39,7 @@ Typography
 p {
   font-size: $font-size-p;
   line-height: $base-line-height;
-  color: $txt-primary;
+  color: $txt-dark;
   padding-bottom: 20px;
 }
 
@@ -52,11 +50,11 @@ h1 {
 h2 {
   font-size: $font-size-h2;
   font-weight: $light;
-  color: $h2-color;
+  color: $txt-dark;
 }
 
 h3 {
-  color: $h3-color;
+  color: $txt-dark;
   font-size: $font-size-h4;
   font-weight: $bold;
   text-transform: uppercase;
@@ -70,7 +68,7 @@ h4 {
 
 h5 {
   font-size: $font-size-h5;
-  color: $h5-color;
+  color: $txt-dark;
   text-transform: uppercase;
   font-weight: $semibold;
 }

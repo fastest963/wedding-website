@@ -1,33 +1,19 @@
 // Colours partial
 
-// Text colours
-$txt-primary: #132336;
-// body font
-$txt-secondary: #2e333d;
-// heading font
-$txt-light: #fff;
-// header/hero
-$txt-accent: #ACB1B4;
-$form-placeholder: #BCC1C3;
-// form placeholder text
-// Global colours
-$accent-color: #003366;
+$txt-light: #FFEBEE;
+$txt-light-hover: #E7B2B0;
+
+$bg-light: #FFEBEE;
+$bg-medium: #E7B2B0;
+$bg-dark: #04224A;
+
+$txt-dark: #04224A;
+$txt-dark-placeholder: rgba(4, 34, 73, 0.6);
+
+$txt-link-dark:#560027;
+
 // global accent colour
 $accent-color-hover: #002a53;
-// global accent colour hover
-$white-color: #fff;
-$black-color: #000;
-// Typography colours
-$h2-color: #2e333d;
-$h3-color: #2e333d;
-$h5-color: #2e333d;
-// Layout colours
-$bg-light: #fbf7fb;
-$section-light: #fff;
-$section-dark: #f8f9fd;
-$to-top-bg: #495061;
-$footer-primary: #2e333d;
-$footer-secondary: #373D4A;
+
 // Keylines
 $keyline-color: #E6E9EA;
-$footer-keyline-color: #4E566C;

@@ -208,18 +208,60 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
+    $('#rsvp-form').on('submit', function(e) {
         e.preventDefault();
-        var data = $(this).serialize();
+        var $el = $(this);
+        var $submit = $el.children('.rsvp-btn');
+        if ($submit.hasClass('loading')) {
+            return;
+        }
+        var originalText = $submit.text();
+        $submit.addClass('loading');
+        $submit.text('Saving...');
+        var fin = function () {
+            $submit.removeClass('loading');
+            $submit.text(originalText);
+        }
+        var data = $el.serialize();
         $.post('https://script.google.com/macros/s/AKfycbxo_8uOtPRfeX2HGHbrsrvQogHZgbGyU3YEdYj20FziGWiJaD7A/exec', data)
-            .done(function (data) {
+            .done(function(data) {
+                fin();
+                if (data && data.result !== 'success') {
+                    if (data.error && data.error.message) {
+                        $('#alert-wrapper').html(alert_markup('danger', 'There was error submitting: ' + data.error.message));
+                    } else {
+                        $('#alert-wrapper').html(alert_markup('danger', 'There was an unknown error submitting. Try again'));
+                    }
+                    return;
+                }
                 $('#alert-wrapper').html('');
                 $('#rsvp-modal').modal('show');
             })
-            .fail(function (data) {
+            .fail(function() {
+                fin();
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server.'));
             });
     });
+
+    $('#rsvp-attending select').on('change', function(e) {
+        var count = ~~$(this).val();
+        for (var i = 1; i < 5; i++) {
+            if (i <= count) {
+                $('#rsvp-name-' + i).removeClass('hidden');
+            } else {
+                $('#rsvp-name-' + i).addClass('hidden');
+                $('#rsvp-name-' + i + ' input').val('');
+            }
+        }
+        $('#rsvp-attending').addClass('hidden');
+    });
+
+    $('#rsvp-form .btn-secondary').on('click', function(e) {
+        var $el = $(this);
+        $el.siblings('.active').removeClass('active');
+        $el.addClass('active');
+        $el.parent().parent().siblings('input').val($el.text());
+    })
 
 });
 
