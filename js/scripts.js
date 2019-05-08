@@ -260,7 +260,7 @@ $(document).ready(function () {
         var $el = $(this);
         $el.siblings('.active').removeClass('active');
         $el.addClass('active');
-        $el.parent().parent().siblings('input').val($el.text());
+        $el.parent().siblings('input').val($el.text());
     })
 
 });
