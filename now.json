@@ -1,9 +1,5 @@
 {
-    "version": 2,
-    "name": "wedding-website",
-    "builds": [
-        { "src": "package.json", "use": "@now/static-build" }
-    ],
-    "alias": ["brittneyandjames.com", "www.brittneyandjames.com"]
+  "version": 2,
+  "name": "wedding-website",
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }
-
